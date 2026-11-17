@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- DEV ONLY: lets the app talk HTTP to 10.0.2.2 (emulator → host machine).
+         Before shipping to real users, switch to HTTPS-only:
+            <base-config cleartextTrafficPermitted="false" /> -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
