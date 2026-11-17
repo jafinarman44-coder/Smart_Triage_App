@@ -223,7 +223,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       body: pages[_selectedIndex],
       bottomNavigationBar: NavigationBar(
         backgroundColor: const Color(0xFF1E293B),
-        indicatorColor: const Color(0xFF6366F1).withValues(alpha: 0.25),
+        indicatorColor: const Color(0xFF6366F1).withOpacity(0.25),
         selectedIndex: _selectedIndex,
         onDestinationSelected: (idx) => setState(() => _selectedIndex = idx),
         destinations: const [
@@ -262,7 +262,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+              border: Border.all(color: Colors.white.withOpacity(0.08)),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -293,12 +293,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 margin: const EdgeInsets.only(bottom: 12),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1E293B).withValues(alpha: 0.75),
+                  color: const Color(0xFF1E293B).withOpacity(0.75),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
                     color: e.status == 'blocked'
-                        ? Colors.redAccent.withValues(alpha: 0.4)
-                        : Colors.white.withValues(alpha: 0.06),
+                        ? Colors.redAccent.withOpacity(0.4)
+                        : Colors.white.withOpacity(0.06),
                   ),
                 ),
                 child: Column(
@@ -321,9 +321,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                           decoration: BoxDecoration(
-                            color: badgeColor.withValues(alpha: 0.15),
+                            color: badgeColor.withOpacity(0.15),
                             borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: badgeColor.withValues(alpha: 0.5)),
+                            border: Border.all(color: badgeColor.withOpacity(0.5)),
                           ),
                           child: Text(
                             e.status.toUpperCase(),
@@ -353,7 +353,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: Colors.redAccent.withValues(alpha: 0.12),
+                          color: Colors.redAccent.withOpacity(0.12),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Row(
@@ -389,7 +389,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           decoration: BoxDecoration(
             color: const Color(0xFF1E293B),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: const Color(0xFF6366F1).withValues(alpha: 0.3)),
+            border: Border.all(color: const Color(0xFF6366F1).withOpacity(0.3)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -409,7 +409,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 title: const Text('Protect Internal Domains (@company.com)'),
                 subtitle: const Text('Raises GuardrailViolation if LLM proposes archiving'),
                 value: _blockInternalArchive,
-                activeThumbColor: const Color(0xFF6366F1),
+                activeColor: const Color(0xFF6366F1),
                 onChanged: (val) => setState(() => _blockInternalArchive = val),
               ),
               SwitchListTile(
@@ -417,7 +417,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 title: const Text('XML Untrusted Data Isolation'),
                 subtitle: const Text('Wraps email bodies in <email> tags to block prompt injection'),
                 value: _strictInjectionDefense,
-                activeThumbColor: const Color(0xFF6366F1),
+                activeColor: const Color(0xFF6366F1),
                 onChanged: (val) => setState(() => _strictInjectionDefense = val),
               ),
             ],
@@ -440,7 +440,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             color: const Color(0xFF1E293B),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: t.isWarning ? Colors.amberAccent.withValues(alpha: 0.5) : Colors.white10,
+              color: t.isWarning ? Colors.amberAccent.withOpacity(0.5) : Colors.white10,
             ),
           ),
           child: Column(
