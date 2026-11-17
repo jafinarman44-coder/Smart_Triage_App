@@ -29,4 +29,5 @@ jobs:
         with:
           context: ./server
           push: true
-          tags: ghcr.io/${{ github.repository }}/server:latest
+          # 👇 এখানে repository নামটিকে সম্পূর্ণ ছোট হাতের অক্ষরে (lowercase) করে দেওয়া হয়েছে:
+          tags: ghcr.io/${{ github.repository_owner }}/smart_triage_app_server:latest
