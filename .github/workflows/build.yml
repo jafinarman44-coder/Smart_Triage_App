@@ -38,6 +38,9 @@ jobs:
       - name: Analyze Dart code
         run: flutter analyze --no-fatal-infos
 
+      - name: Run Unit & Widget Tests
+        run: flutter test
+
       - name: Build Release APK
         run: flutter build apk --release
 
